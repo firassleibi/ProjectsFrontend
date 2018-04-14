@@ -1,0 +1,38 @@
+<div class="page" data-name="projects">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span class="ios-only">Back</span>
+        </a>
+      </div>
+      <div class="title">Management App</div>
+      <div class="right">
+        <a class="addproject" href="#" onclick='mainView.router.navigate("/addProject/",{reloadCurrent :true})'><i class="fa fa-plus"></i>Add Project</a>
+      </div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="block-title">Projects</div>
+    <div class="projects-content">
+      <script id="projects-template" type="text/template7">
+        {{#each projects}}
+        <div class="card">
+          <div class="card-header"><b>{{name}}</b></div>
+          <div class="card-content card-content-padding">
+            <b>Description</b>: {{description}}<br/>
+            <b>Project Manager</b>: {{project_manager}}<br/>
+            <b>Client</b>: {{client.fullname}}<br/>
+            <b>Location</b>: {{location.address}}<br/>
+          </div>
+          <div class="card-footer"><a class="controlitem" href="#" onclick="deleteProject({{id}})"><i class="fa fa-trash"></i>Delete</a>
+            <a class="controlitem" href="#" onclick="editProject({{id}})"><i class="fa fa-edit"></i>Edit</a>
+          </div>
+        </div>
+        {{/each}}
+      </script>
+
+    </div>
+  </div>
+</div>

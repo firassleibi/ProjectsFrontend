@@ -1,0 +1,90 @@
+<div class="page" data-name="addProject">
+  <div class="navbar">
+    <div class="navbar-inner sliding">
+      <div class="left">
+        <a href="#" class="link back">
+          <i class="icon icon-back"></i>
+          <span id="back-settings" class="ios-only">Back</span>
+        </a>
+      </div>
+      <div class="lsettings title">Add Project</div>
+    </div>
+  </div>
+  <div class="page-content settings-page projects-content">
+    <script id="projects-template" type="text/template7">
+    <form onsubmit="return addProject()">
+    <div class="list no-hairlines-md signup-container">
+          <ul>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Project Name</div>
+                <div class="item-input-wrap">
+                  <input id="name"  type="text" placeholder="Project Name" required validate>
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Project Manager</div>
+                <div class="item-input-wrap">
+                  <input id="project_manager"  type="text" placeholder="Project Manager" required validate>
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Project Description</div>
+                <div class="item-input-wrap">
+                  <textarea id="description"  type="number"  placeholder="Project Description" required></textarea>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Initial Fees</div>
+                <div class="item-input-wrap">
+                  <input id="initial_fees" type="text" placeholder="Enter number" required validate pattern="[0-9]*" data-error-message="Only numbers please!">
+                  <span class="input-clear-button"></span>
+                </div>
+              </div>
+            </li>
+
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Client</div>
+                <div class="item-input-wrap">
+                  <select id="client_id" placeholder="Please choose..." required>
+                    {{#each clients}}
+                      <option value="{{id}}">{{fullname}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+            </li>
+            <li class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">Location</div>
+                <div class="item-input-wrap">
+                  <select id="location_id" placeholder="Please choose..." required>
+                    {{#each locations}}
+                      <option value="{{id}}">{{address}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+        <div class="block padding-left padding-right text-align-center">
+          <button type="submit" class="col button button-fill">Add Project</button>
+
+        </div>
+        </form>
+        </script>
+  </div>
+
+</div>
